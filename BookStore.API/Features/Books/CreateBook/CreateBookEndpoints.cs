@@ -7,11 +7,25 @@ public static class CreateBookEndpoints
 {
     public static void MapCreateBook(this IEndpointRouteBuilder app)
     {
-        app.MapPost("/", (Book book, BookStoreData bookStoreData) =>
+        app.MapPost("/", (CreateBookDto bookDto, BookStoreContext dbContext) =>
         {
-            var newBook = bookStoreData.CreateBook(book);
+            var book = new Book
+            {
+                Title = bookDto.Title,
+                Author = bookDto.Author,
+                GenreId = bookDto.GenreId,
+                ISBN = bookDto.ISBN,
+                PublishedDate = bookDto.PublishedDate,
+                PageCount = bookDto.PageCount,
+                Description = bookDto.Description,
+                Publisher = bookDto.Publisher,
+            };
 
-            return Results.CreatedAtRoute("GetBook", new { id = newBook.Id }, book);
+            dbContext.Books.Add(book);
+
+            dbContext.SaveChanges();
+
+            return Results.CreatedAtRoute("GetBook", new { id = book.Id }, bookDto);
         });
     }
 }

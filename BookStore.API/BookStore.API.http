@@ -3,21 +3,21 @@
 GET {{BookStore.API_HostAddress}}/books/
 
 ###
-GET {{BookStore.API_HostAddress}}/books/a7c35946-9805-4564-8827-219a5f1a3a9c
+GET {{BookStore.API_HostAddress}}/books/f79c7afc-7818-4ca1-2251-08dd17eb1f95
 
 ###
 POST {{BookStore.API_HostAddress}}/books
 Content-Type: application/json
 
 {
-    "title": "Test",
-    "author": "Test",
-    "isbn": "01010101010101",
-    "publishedDate": "1900-01-01",
-    "genre": "Test",
-    "pageCount": 1,
-    "description": "Test",
-    "publisher": "Test"
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "isbn": "9780061120084",
+    "publishedDate": "1960-07-11",
+    "genreId": "5888EE0E-6235-48B0-366E-08DD17DF2016",
+    "pageCount": 281,
+    "description": "A novel about the serious issues of race and rape in 1930s Alabama.",
+    "publisher": "J.B. Lippincott & Co."
 }
 
 ###
