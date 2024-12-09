@@ -1,0 +1,27 @@
+@BookStore.API_HostAddress = http://localhost:5101
+
+GET {{BookStore.API_HostAddress}}/books/
+
+###
+GET {{BookStore.API_HostAddress}}/books/a7c35946-9805-4564-8827-219a5f1a3a9c
+
+###
+POST {{BookStore.API_HostAddress}}/books
+Content-Type: application/json
+
+{
+    "title": "Test",
+    "author": "Test",
+    "isbn": "01010101010101",
+    "publishedDate": "1900-01-01",
+    "genre": "Test",
+    "pageCount": 1,
+    "description": "Test",
+    "publisher": "Test"
+}
+
+###
+DELETE {{BookStore.API_HostAddress}}/books/78f65244-8325-4aac-acf4-c95575655920
+
+###
+GET {{BookStore.API_HostAddress}}/genres/
