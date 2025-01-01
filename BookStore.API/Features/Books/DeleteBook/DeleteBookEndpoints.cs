@@ -6,12 +6,19 @@ public static class DeleteBookEndpoints
 {
     public static void MapDeleteBook(this IEndpointRouteBuilder app)
     {
-        app.MapDelete("/{id}", (Guid id, BookStoreData bookStoreData) =>
+        app.MapDelete("/{id:guid}", async (Guid id, BookStoreContext dbContext) =>
         {
-            var result = bookStoreData.DeleteBook(id);
+            var book = await dbContext.Books.FindAsync(id);
 
-            return result ? Results.NoContent() : Results.NotFound();
+            if (book is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Books.Remove(book);
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
         });
     }
 }
-

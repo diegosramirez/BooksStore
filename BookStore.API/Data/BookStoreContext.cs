@@ -9,5 +9,7 @@ public class BookStoreContext(DbContextOptions<BookStoreContext> options)
     public DbSet<Book> Books => Set<Book>();
 
     public DbSet<Genre> Genres => Set<Genre>();
+
+    public DbSet<Author> Authors => Set<Author>();
 }
 

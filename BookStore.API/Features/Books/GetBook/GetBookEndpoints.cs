@@ -22,7 +22,7 @@ public static class GetBookEndpoints
             return Results.Ok(new BookDetailsDto(
                 book.Id,
                 book.Title,
-                book.Author,
+                book.Author.Name,
                 book.ISBN,
                 book.PublishedDate,
                 book.Genre!.Name,

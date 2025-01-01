@@ -13,7 +13,7 @@ public static class GetBooksEndpoints
             (
                 book.Id,
                 book.Title,
-                book.Author,
+                book.Author.Name,
                 book.Description
             )).ToList();
 

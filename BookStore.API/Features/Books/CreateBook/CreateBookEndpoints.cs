@@ -9,10 +9,12 @@ public static class CreateBookEndpoints
     {
         app.MapPost("/", (CreateBookDto bookDto, BookStoreContext dbContext) =>
         {
+            var author = new Author { Name = "John Doe" };
+
             var book = new Book
             {
                 Title = bookDto.Title,
-                Author = bookDto.Author,
+                Author = author,
                 GenreId = bookDto.GenreId,
                 ISBN = bookDto.ISBN,
                 PublishedDate = bookDto.PublishedDate,

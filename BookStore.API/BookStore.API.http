@@ -3,7 +3,7 @@
 GET {{BookStore.API_HostAddress}}/books/
 
 ###
-GET {{BookStore.API_HostAddress}}/books/f79c7afc-7818-4ca1-2251-08dd17eb1f95
+GET {{BookStore.API_HostAddress}}/books/da07ce22-6051-487b-12a2-08dd17ec49d8
 
 ###
 POST {{BookStore.API_HostAddress}}/books

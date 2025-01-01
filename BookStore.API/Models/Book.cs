@@ -4,7 +4,8 @@ public class Book
 {
     public Guid Id { get; set; }
     public required string Title { get; set; }
-    public required string Author { get; set; }
+    public Guid AuthorId { get; set; }
+    public Author? Author { get; set; }
     public required string ISBN { get; set; }
     public DateOnly PublishedDate { get; set; }
     public Guid GenreId { get; set; }
