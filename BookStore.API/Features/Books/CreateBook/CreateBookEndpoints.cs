@@ -9,13 +9,25 @@ public static class CreateBookEndpoints
     {
         app.MapPost("/", (CreateBookDto bookDto, BookStoreContext dbContext) =>
         {
-            var author = new Author { Name = "John Doe" };
+            var author = dbContext.Authors.FirstOrDefault(author => author.Id == bookDto.AuthorId);
+
+            if (author is null)
+            {
+                return Results.NotFound("Author not found!");
+            }
+
+            var genre = dbContext.Genres.FirstOrDefault(genre => genre.Id == bookDto.GenreId);
+
+            if (genre is null)
+            {
+                return Results.NotFound("Genre not found!");
+            }
 
             var book = new Book
             {
                 Title = bookDto.Title,
                 Author = author,
-                GenreId = bookDto.GenreId,
+                Genre = genre,
                 ISBN = bookDto.ISBN,
                 PublishedDate = bookDto.PublishedDate,
                 PageCount = bookDto.PageCount,

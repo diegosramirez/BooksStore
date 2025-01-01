@@ -2,7 +2,7 @@
 
 public record CreateBookDto(
     string Title,
-    string Author,
+    Guid AuthorId,
     string ISBN,
     DateOnly PublishedDate,
     Guid GenreId,

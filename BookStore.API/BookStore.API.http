@@ -10,14 +10,14 @@ POST {{BookStore.API_HostAddress}}/books
 Content-Type: application/json
 
 {
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "isbn": "9780061120084",
-    "publishedDate": "1960-07-11",
-    "genreId": "5888EE0E-6235-48B0-366E-08DD17DF2016",
-    "pageCount": 281,
-    "description": "A novel about the serious issues of race and rape in 1930s Alabama.",
-    "publisher": "J.B. Lippincott & Co."
+    "title": "Harry Potter and the Sorcerer’s Stone",
+    "authorId": "57F8CD53-6840-4913-ADC9-08DD2ABA76D8",
+    "isbn": "9780439708180",
+    "publishedDate": "1997-06-26",
+    "genreId": "F0E31FD0-7F3C-4A1B-1DB2-08DD2ABA76CC",
+    "pageCount": 309,
+    "description": "A young wizard discovers his magical heritage and attends Hogwarts School of Witchcraft and Wizardry.",
+    "publisher": "Scholastic"
 }
 
 ###
