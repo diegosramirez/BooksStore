@@ -1,4 +1,5 @@
 using BookStore.API.Data;
+using BookStore.API.Features.Author;
 using BookStore.API.Features.Books;
 using BookStore.API.Features.Genre;
 
@@ -19,5 +20,6 @@ var app = builder.Build();
 app.InitializeDb();
 app.MapBooks();
 app.MapGenres();
+app.MapAuhors();
 
 app.Run();

@@ -25,3 +25,11 @@ DELETE {{BookStore.API_HostAddress}}/books/78f65244-8325-4aac-acf4-c95575655920
 
 ###
 GET {{BookStore.API_HostAddress}}/genres/
+
+###
+POST {{BookStore.API_HostAddress}}/authors
+Content-Type: application/json
+
+{
+    "name": "Diego Ramirez"
+}
